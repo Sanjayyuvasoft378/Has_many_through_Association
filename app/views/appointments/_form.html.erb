@@ -1,0 +1,27 @@
+<h1>Appointments#new</h1>
+<%= form_with model: @appointment do |form| %>
+    <div>
+        <%= form.label :patient %>
+        <%= form.collection_select :patient_id, Patient.order(:name), :id, :name %>
+        <% @appointment.errors.full_messages_for(:patient_id).each do |message| %> 
+            <%= message %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :physician %>
+        <%= form.collection_select :physician_id, Physician.order(:name), :id, :name %>
+        <% @appointment.errors.full_messages_for(:physician_id).each do |message| %>
+            <%= message %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.label :appointment_date %>
+        <%= form.date_field :appointment_data %>
+        <% @appointment.errors.full_messages_for(:appointment_data).each do |message| %>
+            <%= message %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>

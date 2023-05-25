@@ -1,0 +1,13 @@
+<h1>Appointments#show</h1>
+
+<b>Patient Name : </b><%=  @appointment.patient.name %></br>
+<b>Physician Name : </b><%=  @appointment.physician.name %></br>
+<b>Appointment Date : </b><%=  @appointment.appointment_data %></br>
+
+<li><%= link_to "Edit", edit_appointment_path %><br></li>
+<li><%= link_to "Destroy", appointment_path(@appointment), data:{
+    turbo_method: :delete,
+    turbo_confirm: "Are You Sure"
+} %></li>
+<li><%= link_to "Go Back", appointments_path %></li>
+

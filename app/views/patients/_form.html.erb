@@ -1,0 +1,14 @@
+<h1> Add Form </h1>
+<%= form_with model: @patient do |form| %>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <% @patient.errors.full_messages_for(:name).each do |message| %>
+            <%= message %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+    <%= link_to "Go Back", patients_path %>
+<% end %>

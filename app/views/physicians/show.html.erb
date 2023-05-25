@@ -1,0 +1,10 @@
+<h1>Physicians#show</h1>
+
+<%= @physician.name %>
+
+<li><%= link_to "Edit", edit_physician_path %></li>
+<li><%= link_to "Destroy", physician_path(@physician), data:{
+    turbo_method: :delete,
+    turbo_confirm: "Are You Sure"
+} %></li>
+<li><%= link_to "Go Back", physicians_path %></li>

@@ -1,0 +1,13 @@
+<h1>Physicians#new</h1>
+<%= form_with model: @physician do |form| %>
+    <div>
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+        <% @physician.errors.full_messages_for(:name).each do |message| %>
+            <%= message %>
+        <% end %>
+    </div>
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
